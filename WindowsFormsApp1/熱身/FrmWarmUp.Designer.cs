@@ -150,7 +150,7 @@ namespace WindowsFormsApp1
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button6.Location = new System.Drawing.Point(810, 222);
+            this.button6.Location = new System.Drawing.Point(810, 227);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(122, 35);
             this.button6.TabIndex = 26;

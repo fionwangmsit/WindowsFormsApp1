@@ -52,6 +52,11 @@
     <Compile Include="1. Overview\FrmOverview.Designer.cs">
       <DependentUpon>FrmOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="NWDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NWDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="熱身\FrmWarmUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +89,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="NWDataSet.xsc">
+      <DependentUpon>NWDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NWDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NWDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NWDataSet.xss">
+      <DependentUpon>NWDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
