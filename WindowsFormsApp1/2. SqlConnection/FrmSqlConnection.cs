@@ -8,19 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Starter
+
 {
-    public partial class Form2 : Form
+    public partial class FrmSqlConnection : Form
     {
-        public Form2()
+        public FrmSqlConnection()
         {
             InitializeComponent();
-
-        }
-
-        private void categoriesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-         
         }
     }
 }

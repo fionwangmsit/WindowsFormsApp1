@@ -18,7 +18,9 @@ namespace WindowsFormsApp1._1._Overview
             InitializeComponent();
 
             this.tabControl1.Dock = DockStyle.Fill;
-            this.tabControl1.SelectedIndex = 1;
+            this.tabControl1.SelectedIndex = this.tabControl1.TabCount - 1;
+
+            //...
 
         }
 
@@ -159,6 +161,178 @@ SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=AdventureW
             this.categoriesTableAdapter1.Fill(this.nwDataSet1.Categories);
 
             this.dataGridView2.DataSource = this.nwDataSet1.Categories;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+           this.customersTableAdapter1.Fill(this.nwDataSet1.Customers);
+            this.dataGridView2.DataSource = this.nwDataSet1.Customers;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+           // this.productsTableAdapter1.Connection.ConnectionString = ".......";
+            this.productsTableAdapter1.FillByUnitPrice(this.nwDataSet1.Products, 30);
+            this.dataGridView2.DataSource = this.nwDataSet1.Products;
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.productsTableAdapter1.MyInsertProduct(DateTime.Now.ToString(), true);
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.productsTableAdapter1.Update(this.nwDataSet1.Products);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            //this.productsTableAdapter1.Fill(this.nwDataSet1.Products);
+
+            //this.dataGridView3.DataSource = this.nwDataSet1.Products;
+
+            this.categoriesTableAdapter1.Fill(this.nwDataSet1.Categories);
+
+            this.bindingSource1.DataSource = this.nwDataSet1.Categories;
+            this.dataGridView3.DataSource = this.bindingSource1;
+
+            // this.label6.Text = $"{this.bindingSource1.Position + 1} / {this.bindingSource1.Count}";
+            //======================================================
+            //Binding
+            this.textBox1.DataBindings.Add("Text", this.bindingSource1, "CategoryName");
+            this.pictureBox1.DataBindings.Add("Image", this.bindingSource1, "Picture", true);
+
+            this.bindingNavigator1.BindingSource = this.bindingSource1;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            //this.bindingSource1.Position += 1;
+            this.bindingSource1.MoveNext();
+           // this.label6.Text = $"{this.bindingSource1.Position+1} / {this.bindingSource1.Count}";
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            //this.bindingSource1.Position -= 1;
+
+            this.bindingSource1.MovePrevious();
+           // this.label6.Text = $"{this.bindingSource1.Position + 1} / {this.bindingSource1.Count}";
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.bindingSource1.Position = 0;
+           // this.label6.Text = $"{this.bindingSource1.Position + 1} / {this.bindingSource1.Count}";
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            this.bindingSource1.Position = this.bindingSource1.Count - 1;
+           // this.label6.Text = $"{this.bindingSource1.Position + 1} / {this.bindingSource1.Count}";
+
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+            this.label6.Text = $"{this.bindingSource1.Position + 1} / {this.bindingSource1.Count}";
+
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            FrmTool f = new FrmTool();
+            f.Show();
+            //f.ShowDialog();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            this.categoriesTableAdapter1.Fill(this.nwDataSet1.Categories);
+            this.productsTableAdapter1.Fill(this.nwDataSet1.Products);
+            this.customersTableAdapter1.Fill(this.nwDataSet1.Customers);
+
+
+            this.dataGridView4.DataSource = this.nwDataSet1.Categories;
+            this.dataGridView5.DataSource = this.nwDataSet1.Products;
+            this.dataGridView6.DataSource = this.nwDataSet1.Customers;
+            //==================================
+
+            this.listBox2.Items.Clear();
+
+            for (int i=0; i<= this.nwDataSet1.Tables.Count-1; i++)
+            {
+                DataTable table = this.nwDataSet1.Tables[i];
+                this.listBox2.Items.Add(table.TableName);
+
+                //table.Columns //column schema
+                string s = "";
+                for (int column=0; column<= table.Columns.Count-1; column++)
+                {
+                    s += table.Columns[column].ColumnName+" ";
+                }
+                this.listBox2.Items.Add(s);
+               
+                //================================
+                //table.Rows -Data
+                //TODO .....
+                for (int row =0; row<=table.Rows.Count-1; row++)
+                {
+                    //DataRow dr = table.Rows[row];
+                    this.listBox2.Items.Add(table.Rows[row][0]);
+                }
+
+
+                this.listBox2.Items.Add("==========================");
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            //Weak Type - DataRow
+            //MessageBox.Show(this.nwDataSet1.Products.Rows[0]["ProductNamex"].ToString());  //C# compiler OK; RunTime Error
+            MessageBox.Show(this.nwDataSet1.Products.Rows[0][1].ToString());
+            //================================
+
+            //Strong Type - ProductRow
+            //MessageBox.Show(this.nwDataSet1.Products[0].ProductNamex);//C# compiler Error
+            MessageBox.Show(this.nwDataSet1.Products[0].ProductName);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            this.nwDataSet1.Products.WriteXml("Products.xml", XmlWriteMode.WriteSchema);
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+
+            this.nwDataSet1.Products.Clear();
+
+            this.nwDataSet1.Products.ReadXml("Products.xml");
+
+            this.dataGridView4.DataSource = this.nwDataSet1.Products;
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            //if ( this.splitContainer2.Panel1Collapsed == true)
+            //{
+            //    this.splitContainer2.Panel1Collapsed = false;
+            //}
+            //else
+            //{
+            //    this.splitContainer2.Panel1Collapsed = true;
+            //}    
+
+            this.splitContainer2.Panel1Collapsed = ! this.splitContainer2.Panel1Collapsed;
         }
     }
 }

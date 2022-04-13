@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Starter
 {
-    public partial class Form2 : Form
+    public partial class FrmDisConnected_離線DataSet : Form
     {
-        public Form2()
+        public FrmDisConnected_離線DataSet()
         {
             InitializeComponent();
-
-        }
-
-        private void categoriesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-         
         }
     }
 }
