@@ -32,5 +32,39 @@ namespace WindowsFormsApp1.Properties {
                 return ((string)(this["NorthwindConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Northwind;Integrated Security=True")]
+        public string MyNWConnectionString {
+            get {
+                return ((string)(this["MyNWConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int MyCount {
+            get {
+                return ((int)(this["MyCount"]));
+            }
+            set {
+                this["MyCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 255, 192")]
+        public global::System.Drawing.Color MyBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MyBackColor"]));
+            }
+            set {
+                this["MyBackColor"] = value;
+            }
+        }
     }
 }

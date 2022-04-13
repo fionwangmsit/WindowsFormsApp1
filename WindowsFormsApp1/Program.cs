@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Starter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace WindowsFormsApp1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            
-            Application.Run(new FrmOverview()); //呼叫 class 建構子方法
+            Application.Run(new FrmSqlConnection()); //呼叫 class 建構子方法
         }
     }
 }
