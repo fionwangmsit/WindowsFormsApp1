@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using WindowsFormsApp1.Properties;
+using System.Threading;
 
 namespace Starter
 
@@ -21,6 +22,43 @@ namespace Starter
             InitializeComponent();
 
             this.tabPage1.BackColor = Settings.Default.MyBackColor;
+            this.tabControl1.SelectedIndex = 1;
+
+            //=====================
+            //作業提示
+            for (int i=0; i<=4; i++)
+            {
+                LinkLabel x = new LinkLabel();
+
+                x.Text = "Taipei " + i;
+                x.Left = 5;
+                x.Top = 30 * i;
+                x.Tag = i;  //ID
+
+                x.Click += X_Click;
+                x.MouseMove += X_MouseMove;
+               
+                this.panel1.Controls.Add(x);
+            }
+        }
+
+        private void X_MouseMove(object sender, MouseEventArgs e)
+        {
+            //e.X
+            //e.Y
+        }
+
+        private void X_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(  ((LinkLabel)sender).Text +" - " + ((LinkLabel)sender).Tag);
+
+           // LinkLabel x = (LinkLabel)sender;
+
+           LinkLabel x = sender as LinkLabel;
+            if (x != null)
+            {
+                MessageBox.Show(x.Text);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -255,5 +293,167 @@ namespace Starter
                 Settings.Default.Save(); //save to config 檔案
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\shared\ADO.NET\WindowsFormsApp1\WindowsFormsApp1\Database1.mdf;Integrated Security=True";
+
+            try
+            {
+                //syntax sugar  語法糖 using (....) {  }
+
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    SqlCommand command = new SqlCommand("select * from MyTable", conn);
+
+                    SqlDataReader dataReader = command.ExecuteReader();
+
+                    this.listBox1.Items.Clear();
+                    while (dataReader.Read())
+                    {
+                        // syntax sugar 語法糖 for  string.Format(..)
+                        string s = $"{dataReader["UserName"]} - {dataReader["Password"]}";
+                        this.listBox1.Items.Add(s);
+                    }
+                } // Auto conn.Close()
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string connString = Settings.Default.MyLocalDB; //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
+
+            try
+            {
+                //syntax sugar  語法糖 using (....) {  }
+
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    SqlCommand command = new SqlCommand("select * from MyTable", conn);
+
+                    SqlDataReader dataReader = command.ExecuteReader();
+
+                    this.listBox1.Items.Clear();
+                    while (dataReader.Read())
+                    {
+                        // syntax sugar 語法糖 for  string.Format(..)
+                        string s = $"{dataReader["UserName"]} - {dataReader["Password"]}";
+                        this.listBox1.Items.Add(s);
+                    }
+                } // Auto conn.Close()
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
+
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = @"(LocalDB)\MSSQLLocalDB";
+            builder.AttachDBFilename = Application.StartupPath + @"\Database1.mdf";
+            builder.IntegratedSecurity = true;
+
+           // MessageBox.Show(builder.ConnectionString);
+
+            try
+            {
+                //syntax sugar  語法糖 using (....) {  }
+
+                using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+                {
+                    conn.Open();
+                    SqlCommand command = new SqlCommand("select * from MyTable", conn);
+
+                    SqlDataReader dataReader = command.ExecuteReader();
+
+                    this.listBox1.Items.Clear();
+                    while (dataReader.Read())
+                    {
+                        // syntax sugar 語法糖 for  string.Format(..)
+                        string s = $"{dataReader["UserName"]} - {dataReader["Password"]}";
+                        this.listBox1.Items.Add(s);
+                    }
+                } // Auto conn.Close()
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Reset();
+            this.tabPage1.BackColor = Settings.Default.MyBackColor;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+            string connString = Settings.Default.NorthwindConnectionString;
+
+            try
+            {
+                //syntax sugar  語法糖 using (....) {  }
+
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.StateChange += Conn_StateChange;
+                 
+                    conn.Open();
+
+                    SqlCommand command = new SqlCommand("select * from Products", conn);
+
+                    SqlDataReader dataReader = command.ExecuteReader();
+
+                    this.listBox2.Items.Clear();
+                    while (dataReader.Read())
+                    {
+                        // syntax sugar 語法糖 for  string.Format(..)
+                        string s = $"{dataReader["ProductName"],-40} - {dataReader["UnitPrice"]:c2}";
+                        this.listBox2.Items.Add(s);
+                    }
+                } // Auto conn.Close()
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Conn_StateChange(object sender, StateChangeEventArgs e)
+        {
+            //this.toolStripStatusLabel1.Text = e.CurrentState.ToString();
+            this.statusStrip1.Items[0].Text = e.CurrentState.ToString();
+            this.statusStrip1.Items[1].Text = DateTime.Now.ToLongTimeString();
+
+
+            Application.DoEvents();
+
+            Thread.Sleep(700);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this.productsTableAdapter1.Connection.ConnectionString);
+
+            this.productsTableAdapter1.Connection.StateChange += Conn_StateChange;
+
+            this.productsTableAdapter1.Fill(this.nwDataSet1.Products);
+            this.dataGridView1.DataSource = this.nwDataSet1.Products;
+        }
+
+       
     }
 }

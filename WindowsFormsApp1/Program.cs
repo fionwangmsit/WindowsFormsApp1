@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            
-            Application.Run(new FrmSqlConnection()); //呼叫 class 建構子方法
+            Application.Run(new FrmOverview()); //呼叫 class 建構子方法
         }
     }
 }
