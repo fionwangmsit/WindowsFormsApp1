@@ -22,7 +22,7 @@ namespace Starter
             InitializeComponent();
 
             this.tabPage1.BackColor = Settings.Default.MyBackColor;
-            this.tabControl1.SelectedIndex = 1;
+            this.tabControl1.SelectedIndex = 2;
 
             //=====================
             //作業提示
@@ -454,6 +454,228 @@ namespace Starter
             this.dataGridView1.DataSource = this.nwDataSet1.Products;
         }
 
-       
+        private void button9_Click(object sender, EventArgs e)
+        {
+            int[] nums = new int[100];
+
+            SqlConnection[] conns = new SqlConnection[100];
+            
+            for(int i=0; i<= conns.Length-1; i++)
+            {
+                conns[i] = new SqlConnection(Settings.Default.NorthwindConnectionString);
+                conns[i].Open();
+
+
+                this.label3.Text = $"{i + 1}";
+                Application.DoEvents();
+                Thread.Sleep(100);
+
+            }
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            //Pooling =True
+            const int MAX = 100;
+
+            SqlConnection[] conns = new SqlConnection[MAX];
+            SqlDataReader[] dataReaders = new SqlDataReader[MAX];
+
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(Settings.Default.NorthwindConnectionString);
+            builder.MaxPoolSize = MAX;
+            builder.ConnectTimeout = 2;
+            builder.Pooling = true;
+
+            System.Diagnostics.Stopwatch watcher1 = new System.Diagnostics.Stopwatch();
+            watcher1.Start();
+            for (int i = 0; i <= conns.Length - 1; i++)
+            {
+                conns[i] = new SqlConnection();
+
+                conns[i].ConnectionString = builder.ConnectionString;
+                conns[i].Open();
+
+
+                SqlCommand command = new SqlCommand("Select * from Products", conns[i]);
+
+                dataReaders[i] = command.ExecuteReader();
+
+                while (dataReaders[i].Read())
+                {
+                    this.listBox3.Items.Add(dataReaders[i]["ProductName"]);
+                }
+
+                conns[i].Close();  //Return to POOL
+            }
+
+            watcher1.Stop();
+            this.label1.Text = watcher1.Elapsed.TotalSeconds.ToString();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            //Pooling =false
+            const int MAX = 100;
+
+            SqlConnection[] conns = new SqlConnection[MAX];
+            SqlDataReader[] dataReaders = new SqlDataReader[MAX];
+
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(Settings.Default.NorthwindConnectionString);
+            builder.MaxPoolSize = MAX;
+            builder.ConnectTimeout = 2;
+            builder.Pooling = false;
+
+            System.Diagnostics.Stopwatch watcher1 = new System.Diagnostics.Stopwatch();
+            watcher1.Start();
+            for (int i = 0; i <= conns.Length - 1; i++)
+            {
+                conns[i] = new SqlConnection();
+
+                conns[i].ConnectionString = builder.ConnectionString;
+                conns[i].Open();
+
+
+                SqlCommand command = new SqlCommand("Select * from Products", conns[i]);
+
+                dataReaders[i] = command.ExecuteReader();
+
+                while (dataReaders[i].Read())
+                {
+                    this.listBox3.Items.Add(dataReaders[i]["ProductName"]);
+                }
+
+                conns[i].Close();  //NOT Return to POOL
+            }
+            watcher1.Stop();
+            this.label2.Text = watcher1.Elapsed.TotalSeconds.ToString();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            const int MAXPoolSize = 200;
+
+            SqlConnection[] conns = new SqlConnection[MAXPoolSize];
+
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(Settings.Default.MyAWConnctionString);
+            builder.MaxPoolSize = MAXPoolSize;
+            builder.ConnectTimeout = 1;
+
+            for (int i = 0; i <= conns.Length-1 ; i++)
+            {
+                conns[i] = new SqlConnection(builder.ConnectionString);
+                conns[i].Open();
+
+
+                this.label3.Text = $"{i + 1}";
+                Application.DoEvents();
+                Thread.Sleep(10);
+
+            }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = null;
+
+            try
+
+            {
+                string connString = "Data Source=.;Initial Catalog=Northwindxxx;Integrated Security=True";
+
+                conn = new SqlConnection(connString);
+
+                SqlCommand command = new SqlCommand("Select * from Products", conn);
+                SqlDataReader dr = null;
+                conn.Open();
+                dr = command.ExecuteReader();
+                while (dr.Read())
+                {
+                    this.comboBox2.Items.Add(dr["ProductName"]);
+                }
+
+                this.comboBox2.SelectedIndex = 0;
+            }
+
+
+            catch (SqlException ex)
+            {
+                //ex.Number
+                string s = "";
+                for (int i = 0; i <= ex.Errors.Count - 1; i++)
+                {
+                    //$"{}{}{}"
+                    s += string.Format("{0} : {1}", ex.Errors[i].Number, ex.Errors[i].Message) + Environment.NewLine;
+                }
+                MessageBox.Show("error count:" + ex.Errors.Count + Environment.NewLine + s);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                    conn.Dispose();
+                }
+            }
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            string connString = "Data Source=.;Initial Catalog=Northwindxx;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(connString);
+
+            SqlCommand command = new SqlCommand("Select * from Products", conn);
+            SqlDataReader dr = null;
+
+            try
+            {
+                conn.Open();
+                dr = command.ExecuteReader();
+                while (dr.Read())
+                {
+                    this.comboBox2.Items.Add(dr["ProductName"]);
+                }
+
+                this.comboBox2.SelectedIndex = 0;
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 17:
+                        MessageBox.Show("Wrong Server");
+                        break;
+                    case 4060:
+                        MessageBox.Show("Wrong DataBase");
+                        break;
+                    case 18456:
+                        MessageBox.Show("Wrong User");
+                        break;
+                    default:
+                        MessageBox.Show(ex.Message);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+
+
+                if (conn != null)
+                {
+                    conn.Close();
+                    conn.Dispose();
+                }
+            }
+        }
     }
 }
