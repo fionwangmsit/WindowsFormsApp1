@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -80,6 +81,7 @@
     <Compile Include="2. SqlConnection\FrmSqlConnection.designer.cs">
       <DependentUpon>FrmSqlConnection.cs</DependentUpon>
     </Compile>
+    <Compile Include="3. Connected 連線環境\ClsMemberShip.cs" />
     <Compile Include="3. Connected 連線環境\FrmConnected.cs">
       <SubType>Form</SubType>
     </Compile>

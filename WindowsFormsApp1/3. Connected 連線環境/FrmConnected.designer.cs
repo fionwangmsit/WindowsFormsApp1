@@ -29,38 +29,39 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup15 = new System.Windows.Forms.ListViewGroup("USA (2)", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup16 = new System.Windows.Forms.ListViewGroup("UK (1)", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConnected));
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Node5");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Node6");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Node7");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Node8");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Node2", new System.Windows.Forms.TreeNode[] {
+            treeNode39,
+            treeNode40,
+            treeNode41,
+            treeNode42});
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Node4");
+            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("USA (2)", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("UK (1)", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "aaa",
             "a1",
             "a2"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "bbb",
             "b1",
             "b2"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "ccc",
             "c1",
             "c2"}, -1);
-            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("Node5");
-            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("Node6");
-            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("Node7");
-            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("Node8");
-            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("Node2", new System.Windows.Forms.TreeNode[] {
-            treeNode66,
-            treeNode67,
-            treeNode68,
-            treeNode69});
-            System.Windows.Forms.TreeNode treeNode71 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode72 = new System.Windows.Forms.TreeNode("Node4");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConnected));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button25 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -132,28 +133,28 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button22 = new System.Windows.Forms.Button();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.listView3 = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.button22 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.largeIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.smallIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detailsViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kjkjkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dsfsdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sdfdsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sdfToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dsfdsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smallIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailsViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ImageList2 = new System.Windows.Forms.ImageList(this.components);
             this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -164,6 +165,9 @@
             this.groupByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.countryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.無ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myMemberTableAdapter1 = new WindowsFormsApp1.NWDataSetTableAdapters.MyMemberTableAdapter();
+            this.productsTableAdapter1 = new WindowsFormsApp1.NWDataSetTableAdapters.ProductsTableAdapter();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox4.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -189,10 +193,10 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,7 +204,7 @@
             // 
             this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(this.button11);
-            this.groupBox4.Location = new System.Drawing.Point(78, 583);
+            this.groupBox4.Location = new System.Drawing.Point(78, 580);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -228,9 +232,11 @@
             this.button11.TabIndex = 6;
             this.button11.Text = "Add Member";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.flowLayoutPanel1);
             this.tabPage6.Controls.Add(this.button25);
             this.tabPage6.Controls.Add(this.button24);
             this.tabPage6.Controls.Add(this.textBox4);
@@ -241,20 +247,33 @@
             this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage6.Size = new System.Drawing.Size(1354, 703);
+            this.tabPage6.Size = new System.Drawing.Size(1478, 700);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Insert Image";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(709, 44);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(720, 508);
+            this.flowLayoutPanel1.TabIndex = 6;
+            // 
             // button25
             // 
-            this.button25.Location = new System.Drawing.Point(487, 379);
+            this.button25.Location = new System.Drawing.Point(487, 390);
             this.button25.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(138, 42);
             this.button25.TabIndex = 5;
             this.button25.Text = "Insert to DB";
             this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // button24
             // 
@@ -265,10 +284,11 @@
             this.button24.TabIndex = 4;
             this.button24.Text = "Browse...";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(226, 86);
+            this.textBox4.Location = new System.Drawing.Point(203, 89);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -278,7 +298,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(203, 209);
+            this.pictureBox1.Location = new System.Drawing.Point(203, 210);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(249, 138);
@@ -338,16 +358,18 @@
             this.button8.TabIndex = 12;
             this.button8.Text = "Add Member";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button23
             // 
-            this.button23.Location = new System.Drawing.Point(81, 98);
+            this.button23.Location = new System.Drawing.Point(94, 80);
             this.button23.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(380, 42);
             this.button23.TabIndex = 0;
             this.button23.Text = "DDL - Create Image Table";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // tabPage5
             // 
@@ -356,7 +378,7 @@
             this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage5.Size = new System.Drawing.Size(1354, 700);
+            this.tabPage5.Size = new System.Drawing.Size(1478, 700);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Create Image Table";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -405,7 +427,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1362, 735);
+            this.tabControl2.Size = new System.Drawing.Size(1486, 735);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage7
@@ -419,7 +441,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 31);
             this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1354, 703);
+            this.tabPage7.Size = new System.Drawing.Size(1478, 700);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Load Data";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -433,6 +455,7 @@
             this.button27.TabIndex = 5;
             this.button27.Text = "Load Data";
             this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // listBox5
             // 
@@ -441,49 +464,53 @@
             this.listBox5.Location = new System.Drawing.Point(824, 61);
             this.listBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(796, 290);
+            this.listBox5.Size = new System.Drawing.Size(617, 290);
             this.listBox5.TabIndex = 4;
+            this.listBox5.SelectedIndexChanged += new System.EventHandler(this.listBox5_SelectedIndexChanged);
             // 
             // listBox4
             // 
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 22;
-            this.listBox4.Location = new System.Drawing.Point(89, 473);
+            this.listBox4.Location = new System.Drawing.Point(23, 61);
             this.listBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(285, 224);
+            this.listBox4.Size = new System.Drawing.Size(90, 290);
             this.listBox4.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(420, 77);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(426, 61);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(321, 251);
+            this.pictureBox2.Size = new System.Drawing.Size(338, 290);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
             // button26
             // 
-            this.button26.Location = new System.Drawing.Point(89, 384);
+            this.button26.Location = new System.Drawing.Point(121, 374);
             this.button26.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(138, 42);
             this.button26.TabIndex = 1;
             this.button26.Text = "Load Data";
             this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 22;
-            this.listBox3.Location = new System.Drawing.Point(89, 61);
+            this.listBox3.Location = new System.Drawing.Point(121, 61);
             this.listBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(285, 290);
             this.listBox3.TabIndex = 0;
+            this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
             // tabPage4
             // 
@@ -491,7 +518,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 31);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1362, 735);
+            this.tabPage4.Size = new System.Drawing.Size(1486, 735);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Image";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -532,17 +559,18 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(57, 39);
+            this.button16.Location = new System.Drawing.Point(57, 32);
             this.button16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(390, 42);
             this.button16.TabIndex = 1;
             this.button16.Text = "ExecuteScalar - return 一個結果值";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(57, 92);
+            this.button19.Location = new System.Drawing.Point(61, 92);
             this.button19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(386, 42);
@@ -612,20 +640,21 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(63, 144);
+            this.button18.Location = new System.Drawing.Point(57, 154);
             this.button18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(386, 42);
             this.button18.TabIndex = 9;
             this.button18.Text = "ExecuteReader - return 多個結果集";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.button18);
             this.groupBox8.Controls.Add(this.button16);
             this.groupBox8.Controls.Add(this.button19);
-            this.groupBox8.Location = new System.Drawing.Point(89, 84);
+            this.groupBox8.Location = new System.Drawing.Point(89, 58);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -636,7 +665,7 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(69, 76);
+            this.button17.Location = new System.Drawing.Point(77, 47);
             this.button17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(226, 42);
@@ -692,10 +721,10 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 22;
-            this.listBox2.Location = new System.Drawing.Point(973, 110);
+            this.listBox2.Location = new System.Drawing.Point(960, 110);
             this.listBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(218, 158);
+            this.listBox2.Size = new System.Drawing.Size(394, 158);
             this.listBox2.TabIndex = 3;
             // 
             // button20
@@ -812,7 +841,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 31);
             this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1362, 735);
+            this.tabPage8.Size = new System.Drawing.Size(1486, 735);
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "Transaction";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -841,7 +870,7 @@
             // 
             this.groupBox6.Controls.Add(this.button13);
             this.groupBox6.Controls.Add(this.button14);
-            this.groupBox6.Location = new System.Drawing.Point(581, 407);
+            this.groupBox6.Location = new System.Drawing.Point(581, 379);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -902,6 +931,7 @@
             this.button12.TabIndex = 6;
             this.button12.Text = "Add Member";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // label3
             // 
@@ -954,11 +984,13 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(214, 112);
+            this.textBox2.Location = new System.Drawing.Point(214, 103);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '$';
             this.textBox2.Size = new System.Drawing.Size(182, 29);
             this.textBox2.TabIndex = 8;
+            this.textBox2.UseSystemPasswordChar = true;
             // 
             // textBox1
             // 
@@ -1034,61 +1066,46 @@
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 0;
             // 
-            // listView1
+            // button22
             // 
-            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.LargeImageList = this.ImageList2;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1478, 452);
-            this.listView1.SmallImageList = this.ImageList1;
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.button22.Location = new System.Drawing.Point(721, 210);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(115, 34);
+            this.button22.TabIndex = 6;
+            this.button22.Text = "button22";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
-            // tabPage1
+            // treeView1
             // 
-            this.tabPage1.Controls.Add(this.splitContainer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 31);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage1.Size = new System.Drawing.Size(1486, 735);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "TreeView/ListView";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1494, 770);
-            this.tabControl1.TabIndex = 1;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.groupBox10);
-            this.tabPage3.Controls.Add(this.listBox2);
-            this.tabPage3.Controls.Add(this.listBox1);
-            this.tabPage3.Controls.Add(this.groupBox9);
-            this.tabPage3.Controls.Add(this.groupBox8);
-            this.tabPage3.Location = new System.Drawing.Point(4, 31);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1362, 735);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "ExecuteXXX";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.treeView1.Location = new System.Drawing.Point(721, 22);
+            this.treeView1.Name = "treeView1";
+            treeNode37.Name = "Node0";
+            treeNode37.Text = "Node0";
+            treeNode38.Name = "Node1";
+            treeNode38.Text = "Node1";
+            treeNode39.Name = "Node5";
+            treeNode39.Text = "Node5";
+            treeNode40.Name = "Node6";
+            treeNode40.Text = "Node6";
+            treeNode41.Name = "Node7";
+            treeNode41.Text = "Node7";
+            treeNode42.Name = "Node8";
+            treeNode42.Text = "Node8";
+            treeNode43.Name = "Node2";
+            treeNode43.Text = "Node2";
+            treeNode44.Name = "Node3";
+            treeNode44.Text = "Node3";
+            treeNode45.Name = "Node4";
+            treeNode45.Text = "Node4";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode37,
+            treeNode38,
+            treeNode43,
+            treeNode44,
+            treeNode45});
+            this.treeView1.Size = new System.Drawing.Size(207, 181);
+            this.treeView1.TabIndex = 5;
             // 
             // listView3
             // 
@@ -1096,22 +1113,22 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            listViewGroup15.Header = "USA (2)";
-            listViewGroup15.Name = "listViewGroup1";
-            listViewGroup15.Tag = "usa";
-            listViewGroup16.Header = "UK (1)";
-            listViewGroup16.Name = "listViewGroup2";
+            listViewGroup9.Header = "USA (2)";
+            listViewGroup9.Name = "listViewGroup1";
+            listViewGroup9.Tag = "usa";
+            listViewGroup10.Header = "UK (1)";
+            listViewGroup10.Name = "listViewGroup2";
             this.listView3.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup15,
-            listViewGroup16});
+            listViewGroup9,
+            listViewGroup10});
             this.listView3.HideSelection = false;
-            listViewItem22.Group = listViewGroup15;
-            listViewItem23.Group = listViewGroup15;
-            listViewItem24.Group = listViewGroup16;
+            listViewItem13.Group = listViewGroup9;
+            listViewItem14.Group = listViewGroup9;
+            listViewItem15.Group = listViewGroup10;
             this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem22,
-            listViewItem23,
-            listViewItem24});
+            listViewItem13,
+            listViewItem14,
+            listViewItem15});
             this.listView3.Location = new System.Drawing.Point(389, 22);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(303, 222);
@@ -1131,46 +1148,19 @@
             // 
             this.columnHeader6.Text = "yyy";
             // 
-            // treeView1
+            // listView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(721, 22);
-            this.treeView1.Name = "treeView1";
-            treeNode64.Name = "Node0";
-            treeNode64.Text = "Node0";
-            treeNode65.Name = "Node1";
-            treeNode65.Text = "Node1";
-            treeNode66.Name = "Node5";
-            treeNode66.Text = "Node5";
-            treeNode67.Name = "Node6";
-            treeNode67.Text = "Node6";
-            treeNode68.Name = "Node7";
-            treeNode68.Text = "Node7";
-            treeNode69.Name = "Node8";
-            treeNode69.Text = "Node8";
-            treeNode70.Name = "Node2";
-            treeNode70.Text = "Node2";
-            treeNode71.Name = "Node3";
-            treeNode71.Text = "Node3";
-            treeNode72.Name = "Node4";
-            treeNode72.Text = "Node4";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode64,
-            treeNode65,
-            treeNode70,
-            treeNode71,
-            treeNode72});
-            this.treeView1.Size = new System.Drawing.Size(207, 181);
-            this.treeView1.TabIndex = 5;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(721, 210);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(115, 34);
-            this.button22.TabIndex = 6;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
+            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.HideSelection = false;
+            this.listView1.LargeImageList = this.ImageList2;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1478, 452);
+            this.listView1.SmallImageList = this.ImageList1;
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // contextMenuStrip1
             // 
@@ -1192,6 +1182,48 @@
             this.largeIconToolStripMenuItem.Text = "Large Icon";
             this.largeIconToolStripMenuItem.Click += new System.EventHandler(this.largeIconToolStripMenuItem_Click);
             // 
+            // kjkjkToolStripMenuItem
+            // 
+            this.kjkjkToolStripMenuItem.Name = "kjkjkToolStripMenuItem";
+            this.kjkjkToolStripMenuItem.Size = new System.Drawing.Size(154, 34);
+            this.kjkjkToolStripMenuItem.Text = "kjkjk";
+            // 
+            // dsfsdToolStripMenuItem
+            // 
+            this.dsfsdToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sdfdsToolStripMenuItem,
+            this.sdfToolStripMenuItem,
+            this.sdfToolStripMenuItem1});
+            this.dsfsdToolStripMenuItem.Name = "dsfsdToolStripMenuItem";
+            this.dsfsdToolStripMenuItem.Size = new System.Drawing.Size(154, 34);
+            this.dsfsdToolStripMenuItem.Text = "dsfsd";
+            // 
+            // sdfdsToolStripMenuItem
+            // 
+            this.sdfdsToolStripMenuItem.Name = "sdfdsToolStripMenuItem";
+            this.sdfdsToolStripMenuItem.Size = new System.Drawing.Size(154, 34);
+            this.sdfdsToolStripMenuItem.Text = "sdfds";
+            // 
+            // sdfToolStripMenuItem
+            // 
+            this.sdfToolStripMenuItem.Name = "sdfToolStripMenuItem";
+            this.sdfToolStripMenuItem.Size = new System.Drawing.Size(154, 34);
+            this.sdfToolStripMenuItem.Text = "sdf";
+            // 
+            // sdfToolStripMenuItem1
+            // 
+            this.sdfToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dsfdsfToolStripMenuItem});
+            this.sdfToolStripMenuItem1.Name = "sdfToolStripMenuItem1";
+            this.sdfToolStripMenuItem1.Size = new System.Drawing.Size(154, 34);
+            this.sdfToolStripMenuItem1.Text = "sdf";
+            // 
+            // dsfdsfToolStripMenuItem
+            // 
+            this.dsfdsfToolStripMenuItem.Name = "dsfdsfToolStripMenuItem";
+            this.dsfdsfToolStripMenuItem.Size = new System.Drawing.Size(160, 34);
+            this.dsfdsfToolStripMenuItem.Text = "dsfdsf";
+            // 
             // smallIconToolStripMenuItem
             // 
             this.smallIconToolStripMenuItem.Name = "smallIconToolStripMenuItem";
@@ -1205,48 +1237,6 @@
             this.detailsViewToolStripMenuItem.Size = new System.Drawing.Size(185, 30);
             this.detailsViewToolStripMenuItem.Text = "Details View";
             this.detailsViewToolStripMenuItem.Click += new System.EventHandler(this.detailsViewToolStripMenuItem_Click);
-            // 
-            // kjkjkToolStripMenuItem
-            // 
-            this.kjkjkToolStripMenuItem.Name = "kjkjkToolStripMenuItem";
-            this.kjkjkToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.kjkjkToolStripMenuItem.Text = "kjkjk";
-            // 
-            // dsfsdToolStripMenuItem
-            // 
-            this.dsfsdToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sdfdsToolStripMenuItem,
-            this.sdfToolStripMenuItem,
-            this.sdfToolStripMenuItem1});
-            this.dsfsdToolStripMenuItem.Name = "dsfsdToolStripMenuItem";
-            this.dsfsdToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.dsfsdToolStripMenuItem.Text = "dsfsd";
-            // 
-            // sdfdsToolStripMenuItem
-            // 
-            this.sdfdsToolStripMenuItem.Name = "sdfdsToolStripMenuItem";
-            this.sdfdsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.sdfdsToolStripMenuItem.Text = "sdfds";
-            // 
-            // sdfToolStripMenuItem
-            // 
-            this.sdfToolStripMenuItem.Name = "sdfToolStripMenuItem";
-            this.sdfToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.sdfToolStripMenuItem.Text = "sdf";
-            // 
-            // sdfToolStripMenuItem1
-            // 
-            this.sdfToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dsfdsfToolStripMenuItem});
-            this.sdfToolStripMenuItem1.Name = "sdfToolStripMenuItem1";
-            this.sdfToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
-            this.sdfToolStripMenuItem1.Text = "sdf";
-            // 
-            // dsfdsfToolStripMenuItem
-            // 
-            this.dsfdsfToolStripMenuItem.Name = "dsfdsfToolStripMenuItem";
-            this.dsfdsfToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.dsfdsfToolStripMenuItem.Text = "dsfdsf";
             // 
             // ImageList2
             // 
@@ -1295,6 +1285,48 @@
             this.ImageList1.Images.SetKeyName(16, "FLGDEN.ICO");
             this.ImageList1.Images.SetKeyName(17, "FLGFIN.ICO");
             this.ImageList1.Images.SetKeyName(18, "FLGFRAN.ICO");
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.splitContainer1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Size = new System.Drawing.Size(1486, 735);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "TreeView/ListView";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1494, 770);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox10);
+            this.tabPage3.Controls.Add(this.listBox2);
+            this.tabPage3.Controls.Add(this.listBox1);
+            this.tabPage3.Controls.Add(this.groupBox9);
+            this.tabPage3.Controls.Add(this.groupBox8);
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1486, 735);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "ExecuteXXX";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // contextMenuStrip2
             // 
@@ -1368,6 +1400,18 @@
             this.無ToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.無ToolStripMenuItem.Text = "無";
             // 
+            // myMemberTableAdapter1
+            // 
+            this.myMemberTableAdapter1.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FrmConnected
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -1408,10 +1452,10 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1526,5 +1570,9 @@
         private System.Windows.Forms.ToolStripMenuItem groupByToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem countryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 無ToolStripMenuItem;
+        private WindowsFormsApp1.NWDataSetTableAdapters.MyMemberTableAdapter myMemberTableAdapter1;
+        private WindowsFormsApp1.NWDataSetTableAdapters.ProductsTableAdapter productsTableAdapter1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
