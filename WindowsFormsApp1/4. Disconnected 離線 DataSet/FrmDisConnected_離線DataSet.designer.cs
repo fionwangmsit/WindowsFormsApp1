@@ -28,20 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisConnected_離線DataSet));
             this.button4 = new System.Windows.Forms.Button();
-            this.Button12 = new System.Windows.Forms.Button();
-            this.Button13 = new System.Windows.Forms.Button();
-            this.Button14 = new System.Windows.Forms.Button();
-            this.Button15 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.Button16 = new System.Windows.Forms.Button();
-            this.Button17 = new System.Windows.Forms.Button();
-            this.Button18 = new System.Windows.Forms.Button();
-            this.Button19 = new System.Windows.Forms.Button();
-            this.Button20 = new System.Windows.Forms.Button();
-            this.Button21 = new System.Windows.Forms.Button();
-            this.Button22 = new System.Windows.Forms.Button();
-            this.Button23 = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -54,7 +46,6 @@
             this.TabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.Button25 = new System.Windows.Forms.Button();
@@ -86,6 +77,16 @@
             this.TabControl1 = new System.Windows.Forms.TabControl();
             this.TabPage4 = new System.Windows.Forms.TabPage();
             this.TabPage5 = new System.Windows.Forms.TabPage();
+            this.Column2 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.categoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.nwDataSet1 = new WindowsFormsApp1.NWDataSet();
+            this.categoriesTableAdapter1 = new WindowsFormsApp1.NWDataSetTableAdapters.CategoriesTableAdapter();
+            this.productsTableAdapter1 = new WindowsFormsApp1.NWDataSetTableAdapters.ProductsTableAdapter();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
@@ -102,6 +103,8 @@
             this.TabControl1.SuspendLayout();
             this.TabPage4.SuspendLayout();
             this.TabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -113,46 +116,7 @@
             this.button4.TabIndex = 35;
             this.button4.Text = "FrmProductManagement";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // Button12
-            // 
-            this.Button12.Location = new System.Drawing.Point(137, 153);
-            this.Button12.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button12.Name = "Button12";
-            this.Button12.Size = new System.Drawing.Size(88, 43);
-            this.Button12.TabIndex = 33;
-            this.Button12.Text = "<";
-            this.Button12.UseVisualStyleBackColor = true;
-            // 
-            // Button13
-            // 
-            this.Button13.Location = new System.Drawing.Point(40, 153);
-            this.Button13.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button13.Name = "Button13";
-            this.Button13.Size = new System.Drawing.Size(88, 43);
-            this.Button13.TabIndex = 32;
-            this.Button13.Text = "<<";
-            this.Button13.UseVisualStyleBackColor = true;
-            // 
-            // Button14
-            // 
-            this.Button14.Location = new System.Drawing.Point(359, 153);
-            this.Button14.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button14.Name = "Button14";
-            this.Button14.Size = new System.Drawing.Size(88, 43);
-            this.Button14.TabIndex = 31;
-            this.Button14.Text = ">>";
-            this.Button14.UseVisualStyleBackColor = true;
-            // 
-            // Button15
-            // 
-            this.Button15.Location = new System.Drawing.Point(262, 153);
-            this.Button15.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button15.Name = "Button15";
-            this.Button15.Size = new System.Drawing.Size(88, 43);
-            this.Button15.TabIndex = 30;
-            this.Button15.Text = ">";
-            this.Button15.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -164,86 +128,6 @@
             this.button2.Text = "FrmDataBindings_MyImageTable";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // Button16
-            // 
-            this.Button16.Location = new System.Drawing.Point(192, 368);
-            this.Button16.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button16.Name = "Button16";
-            this.Button16.Size = new System.Drawing.Size(138, 43);
-            this.Button16.TabIndex = 29;
-            this.Button16.Text = "DataView";
-            this.Button16.UseVisualStyleBackColor = true;
-            // 
-            // Button17
-            // 
-            this.Button17.Location = new System.Drawing.Point(43, 368);
-            this.Button17.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button17.Name = "Button17";
-            this.Button17.Size = new System.Drawing.Size(138, 43);
-            this.Button17.TabIndex = 28;
-            this.Button17.Text = "Add Dialog";
-            this.Button17.UseVisualStyleBackColor = true;
-            // 
-            // Button18
-            // 
-            this.Button18.Location = new System.Drawing.Point(359, 293);
-            this.Button18.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button18.Name = "Button18";
-            this.Button18.Size = new System.Drawing.Size(138, 43);
-            this.Button18.TabIndex = 27;
-            this.Button18.Text = "Modify";
-            this.Button18.UseVisualStyleBackColor = true;
-            // 
-            // Button19
-            // 
-            this.Button19.Location = new System.Drawing.Point(192, 293);
-            this.Button19.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button19.Name = "Button19";
-            this.Button19.Size = new System.Drawing.Size(138, 43);
-            this.Button19.TabIndex = 26;
-            this.Button19.Text = "Delete";
-            this.Button19.UseVisualStyleBackColor = true;
-            // 
-            // Button20
-            // 
-            this.Button20.Location = new System.Drawing.Point(43, 293);
-            this.Button20.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button20.Name = "Button20";
-            this.Button20.Size = new System.Drawing.Size(138, 43);
-            this.Button20.TabIndex = 25;
-            this.Button20.Text = "Add";
-            this.Button20.UseVisualStyleBackColor = true;
-            // 
-            // Button21
-            // 
-            this.Button21.Location = new System.Drawing.Point(343, 222);
-            this.Button21.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button21.Name = "Button21";
-            this.Button21.Size = new System.Drawing.Size(156, 43);
-            this.Button21.TabIndex = 24;
-            this.Button21.Text = "Filter";
-            this.Button21.UseVisualStyleBackColor = true;
-            // 
-            // Button22
-            // 
-            this.Button22.Location = new System.Drawing.Point(192, 222);
-            this.Button22.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button22.Name = "Button22";
-            this.Button22.Size = new System.Drawing.Size(138, 43);
-            this.Button22.TabIndex = 23;
-            this.Button22.Text = "Find";
-            this.Button22.UseVisualStyleBackColor = true;
-            // 
-            // Button23
-            // 
-            this.Button23.Location = new System.Drawing.Point(43, 222);
-            this.Button23.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Button23.Name = "Button23";
-            this.Button23.Size = new System.Drawing.Size(138, 43);
-            this.Button23.TabIndex = 22;
-            this.Button23.Text = "sort";
-            this.Button23.UseVisualStyleBackColor = true;
-            // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.button1);
@@ -253,10 +137,10 @@
             this.tabPage7.Controls.Add(this.button31);
             this.tabPage7.Controls.Add(this.dataGridView9);
             this.tabPage7.Controls.Add(this.button32);
-            this.tabPage7.Location = new System.Drawing.Point(4, 28);
+            this.tabPage7.Location = new System.Drawing.Point(4, 31);
             this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1171, 852);
+            this.tabPage7.Size = new System.Drawing.Size(1575, 849);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "DataSet";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -273,13 +157,14 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(46, 144);
+            this.button5.Location = new System.Drawing.Point(46, 166);
             this.button5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(199, 61);
             this.button5.TabIndex = 17;
             this.button5.Text = "Add TotalPrice Column";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button24
             // 
@@ -290,16 +175,17 @@
             this.button24.TabIndex = 16;
             this.button24.Text = "Fill >>";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // dataGridView8
             // 
             this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(274, 89);
+            this.dataGridView8.Location = new System.Drawing.Point(293, 89);
             this.dataGridView8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.dataGridView8.Name = "dataGridView8";
             this.dataGridView8.RowHeadersWidth = 62;
             this.dataGridView8.RowTemplate.Height = 24;
-            this.dataGridView8.Size = new System.Drawing.Size(826, 276);
+            this.dataGridView8.Size = new System.Drawing.Size(1237, 276);
             this.dataGridView8.TabIndex = 15;
             // 
             // button31
@@ -345,6 +231,7 @@
             // 
             // TabPage1
             // 
+            this.TabPage1.Controls.Add(this.dataGridView2);
             this.TabPage1.Controls.Add(this.dataGridView1);
             this.TabPage1.Controls.Add(this.dataGridView7);
             this.TabPage1.Controls.Add(this.label6);
@@ -360,7 +247,7 @@
             this.TabPage1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TabPage1.Name = "TabPage1";
             this.TabPage1.Padding = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.TabPage1.Size = new System.Drawing.Size(1171, 849);
+            this.TabPage1.Size = new System.Drawing.Size(1368, 849);
             this.TabPage1.TabIndex = 0;
             this.TabPage1.Text = "DataGridView";
             this.TabPage1.UseVisualStyleBackColor = true;
@@ -368,35 +255,28 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(278, 160);
+            this.dataGridView1.Location = new System.Drawing.Point(288, 150);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 31;
-            this.dataGridView1.Size = new System.Drawing.Size(863, 276);
+            this.dataGridView1.Size = new System.Drawing.Size(181, 276);
             this.dataGridView1.TabIndex = 89;
             // 
             // dataGridView7
             // 
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2});
-            this.dataGridView7.Location = new System.Drawing.Point(288, 524);
+            this.Column2,
+            this.Column1});
+            this.dataGridView7.Location = new System.Drawing.Point(288, 457);
             this.dataGridView7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.RowHeadersWidth = 62;
-            this.dataGridView7.RowTemplate.Height = 24;
-            this.dataGridView7.Size = new System.Drawing.Size(919, 276);
+            this.dataGridView7.RowTemplate.Height = 34;
+            this.dataGridView7.Size = new System.Drawing.Size(1008, 292);
             this.dataGridView7.TabIndex = 88;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Text = "Product Details";
-            this.Column2.UseColumnTextForLinkValue = true;
-            this.Column2.Width = 150;
+            this.dataGridView7.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellContentClick);
             // 
             // label6
             // 
@@ -405,7 +285,7 @@
             this.label6.Location = new System.Drawing.Point(284, 115);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(377, 22);
+            this.label6.Size = new System.Drawing.Size(413, 22);
             this.label6.TabIndex = 86;
             this.label6.Text = "RowTemplate / 資料行 / stretch / Padding";
             // 
@@ -422,7 +302,7 @@
             // 
             // Button25
             // 
-            this.Button25.Location = new System.Drawing.Point(60, 659);
+            this.Button25.Location = new System.Drawing.Point(53, 697);
             this.Button25.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Button25.Name = "Button25";
             this.Button25.Size = new System.Drawing.Size(159, 43);
@@ -432,43 +312,47 @@
             // 
             // Button26
             // 
-            this.Button26.Location = new System.Drawing.Point(44, 524);
+            this.Button26.Location = new System.Drawing.Point(53, 577);
             this.Button26.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Button26.Name = "Button26";
             this.Button26.Size = new System.Drawing.Size(159, 43);
             this.Button26.TabIndex = 24;
             this.Button26.Text = "CurrentCell";
             this.Button26.UseVisualStyleBackColor = true;
+            this.Button26.Click += new System.EventHandler(this.Button26_Click);
             // 
             // Button27
             // 
-            this.Button27.Location = new System.Drawing.Point(44, 577);
+            this.Button27.Location = new System.Drawing.Point(53, 637);
             this.Button27.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Button27.Name = "Button27";
             this.Button27.Size = new System.Drawing.Size(159, 43);
             this.Button27.TabIndex = 23;
             this.Button27.Text = "CurrentRow";
             this.Button27.UseVisualStyleBackColor = true;
+            this.Button27.Click += new System.EventHandler(this.Button27_Click);
             // 
             // Button28
             // 
-            this.Button28.Location = new System.Drawing.Point(53, 286);
+            this.Button28.Location = new System.Drawing.Point(53, 517);
             this.Button28.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Button28.Name = "Button28";
             this.Button28.Size = new System.Drawing.Size(159, 43);
             this.Button28.TabIndex = 22;
             this.Button28.Text = "Frozon";
             this.Button28.UseVisualStyleBackColor = true;
+            this.Button28.Click += new System.EventHandler(this.Button28_Click);
             // 
             // Button29
             // 
-            this.Button29.Location = new System.Drawing.Point(53, 233);
+            this.Button29.Location = new System.Drawing.Point(53, 457);
             this.Button29.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Button29.Name = "Button29";
             this.Button29.Size = new System.Drawing.Size(159, 43);
             this.Button29.TabIndex = 21;
             this.Button29.Text = "AllowXXX";
             this.Button29.UseVisualStyleBackColor = true;
+            this.Button29.Click += new System.EventHandler(this.Button29_Click);
             // 
             // Button30
             // 
@@ -477,8 +361,9 @@
             this.Button30.Name = "Button30";
             this.Button30.Size = new System.Drawing.Size(159, 43);
             this.Button30.TabIndex = 20;
-            this.Button30.Text = "Fill >>";
+            this.Button30.Text = "Binding >>";
             this.Button30.UseVisualStyleBackColor = true;
+            this.Button30.Click += new System.EventHandler(this.Button30_Click);
             // 
             // Label5
             // 
@@ -663,10 +548,10 @@
             // TabPage3
             // 
             this.TabPage3.Controls.Add(this.button2);
-            this.TabPage3.Location = new System.Drawing.Point(4, 28);
+            this.TabPage3.Location = new System.Drawing.Point(4, 31);
             this.TabPage3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TabPage3.Name = "TabPage3";
-            this.TabPage3.Size = new System.Drawing.Size(1171, 852);
+            this.TabPage3.Size = new System.Drawing.Size(1368, 849);
             this.TabPage3.TabIndex = 2;
             this.TabPage3.Text = "資料繫結(Binding)";
             this.TabPage3.UseVisualStyleBackColor = true;
@@ -686,11 +571,11 @@
             this.TabPage2.Controls.Add(this.DataGridView6);
             this.TabPage2.Controls.Add(this.Button10);
             this.TabPage2.Controls.Add(this.Button11);
-            this.TabPage2.Location = new System.Drawing.Point(4, 28);
+            this.TabPage2.Location = new System.Drawing.Point(4, 31);
             this.TabPage2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TabPage2.Name = "TabPage2";
             this.TabPage2.Padding = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.TabPage2.Size = new System.Drawing.Size(1171, 852);
+            this.TabPage2.Size = new System.Drawing.Size(1368, 849);
             this.TabPage2.TabIndex = 1;
             this.TabPage2.Text = "Adapater (Update)";
             this.TabPage2.UseVisualStyleBackColor = true;
@@ -699,10 +584,10 @@
             // 
             this.TabPage6.Controls.Add(this.button34);
             this.TabPage6.Controls.Add(this.Label12);
-            this.TabPage6.Location = new System.Drawing.Point(4, 28);
+            this.TabPage6.Location = new System.Drawing.Point(4, 31);
             this.TabPage6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TabPage6.Name = "TabPage6";
-            this.TabPage6.Size = new System.Drawing.Size(1171, 852);
+            this.TabPage6.Size = new System.Drawing.Size(1368, 849);
             this.TabPage6.TabIndex = 5;
             this.TabPage6.Text = "資料關聯 (Relation)";
             this.TabPage6.UseVisualStyleBackColor = true;
@@ -721,28 +606,16 @@
             this.TabControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
-            this.TabControl1.Size = new System.Drawing.Size(1179, 884);
+            this.TabControl1.Size = new System.Drawing.Size(1583, 884);
             this.TabControl1.TabIndex = 2;
             // 
             // TabPage4
             // 
             this.TabPage4.Controls.Add(this.button4);
-            this.TabPage4.Controls.Add(this.Button12);
-            this.TabPage4.Controls.Add(this.Button13);
-            this.TabPage4.Controls.Add(this.Button14);
-            this.TabPage4.Controls.Add(this.Button15);
-            this.TabPage4.Controls.Add(this.Button16);
-            this.TabPage4.Controls.Add(this.Button17);
-            this.TabPage4.Controls.Add(this.Button18);
-            this.TabPage4.Controls.Add(this.Button19);
-            this.TabPage4.Controls.Add(this.Button20);
-            this.TabPage4.Controls.Add(this.Button21);
-            this.TabPage4.Controls.Add(this.Button22);
-            this.TabPage4.Controls.Add(this.Button23);
-            this.TabPage4.Location = new System.Drawing.Point(4, 28);
+            this.TabPage4.Location = new System.Drawing.Point(4, 31);
             this.TabPage4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TabPage4.Name = "TabPage4";
-            this.TabPage4.Size = new System.Drawing.Size(1171, 852);
+            this.TabPage4.Size = new System.Drawing.Size(1575, 849);
             this.TabPage4.TabIndex = 3;
             this.TabPage4.Text = "資料操作 / DataView";
             this.TabPage4.UseVisualStyleBackColor = true;
@@ -751,19 +624,112 @@
             // 
             this.TabPage5.Controls.Add(this.button33);
             this.TabPage5.Controls.Add(this.Label4);
-            this.TabPage5.Location = new System.Drawing.Point(4, 28);
+            this.TabPage5.Location = new System.Drawing.Point(4, 31);
             this.TabPage5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TabPage5.Name = "TabPage5";
-            this.TabPage5.Size = new System.Drawing.Size(1171, 852);
+            this.TabPage5.Size = new System.Drawing.Size(1368, 849);
             this.TabPage5.TabIndex = 4;
             this.TabPage5.Text = "查閱資料表";
             this.TabPage5.UseVisualStyleBackColor = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.Text = "Product Details";
+            this.Column2.UseColumnTextForLinkValue = true;
+            this.Column2.Width = 150;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(2);
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle16;
+            this.Column1.HeaderText = "詳細";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.Text = "xxx";
+            this.Column1.UseColumnTextForButtonValue = true;
+            this.Column1.Width = 150;
+            // 
+            // dataGridView2
+            // 
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.categoryIDDataGridViewTextBoxColumn,
+            this.categoryNameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.pictureDataGridViewImageColumn});
+            this.dataGridView2.DataMember = "Categories";
+            this.dataGridView2.DataSource = this.nwDataSet1;
+            this.dataGridView2.Location = new System.Drawing.Point(510, 150);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 70;
+            this.dataGridView2.Size = new System.Drawing.Size(775, 276);
+            this.dataGridView2.TabIndex = 90;
+            // 
+            // categoryIDDataGridViewTextBoxColumn
+            // 
+            this.categoryIDDataGridViewTextBoxColumn.DataPropertyName = "CategoryID";
+            this.categoryIDDataGridViewTextBoxColumn.HeaderText = "CategoryID";
+            this.categoryIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.categoryIDDataGridViewTextBoxColumn.Name = "categoryIDDataGridViewTextBoxColumn";
+            this.categoryIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.categoryIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // categoryNameDataGridViewTextBoxColumn
+            // 
+            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "CategoryName";
+            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CategoryName";
+            this.categoryNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
+            this.categoryNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // pictureDataGridViewImageColumn
+            // 
+            this.pictureDataGridViewImageColumn.DataPropertyName = "Picture";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle18.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle18.NullValue")));
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(4);
+            this.pictureDataGridViewImageColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            this.pictureDataGridViewImageColumn.HeaderText = "Picture 圖";
+            this.pictureDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.pictureDataGridViewImageColumn.MinimumWidth = 8;
+            this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
+            this.pictureDataGridViewImageColumn.Width = 150;
+            // 
+            // nwDataSet1
+            // 
+            this.nwDataSet1.DataSetName = "NWDataSet";
+            this.nwDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // categoriesTableAdapter1
+            // 
+            this.categoriesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
             // 
             // FrmDisConnected_離線DataSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 884);
+            this.ClientSize = new System.Drawing.Size(1583, 884);
             this.Controls.Add(this.TabControl1);
             this.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -789,6 +755,8 @@
             this.TabPage4.ResumeLayout(false);
             this.TabPage5.ResumeLayout(false);
             this.TabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -796,19 +764,7 @@
         #endregion
 
         private System.Windows.Forms.Button button4;
-        internal System.Windows.Forms.Button Button12;
-        internal System.Windows.Forms.Button Button13;
-        internal System.Windows.Forms.Button Button14;
-        internal System.Windows.Forms.Button Button15;
         private System.Windows.Forms.Button button2;
-        internal System.Windows.Forms.Button Button16;
-        internal System.Windows.Forms.Button Button17;
-        internal System.Windows.Forms.Button Button18;
-        internal System.Windows.Forms.Button Button19;
-        internal System.Windows.Forms.Button Button20;
-        internal System.Windows.Forms.Button Button21;
-        internal System.Windows.Forms.Button Button22;
-        internal System.Windows.Forms.Button Button23;
         private System.Windows.Forms.TabPage tabPage7;
         internal System.Windows.Forms.Button button1;
         internal System.Windows.Forms.Button button5;
@@ -820,7 +776,6 @@
         private System.Windows.Forms.Button button33;
         internal System.Windows.Forms.TabPage TabPage1;
         private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.DataGridViewLinkColumn Column2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label33;
         internal System.Windows.Forms.Button Button25;
@@ -853,5 +808,15 @@
         internal System.Windows.Forms.TabPage TabPage4;
         internal System.Windows.Forms.TabPage TabPage5;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private WindowsFormsApp1.NWDataSetTableAdapters.CategoriesTableAdapter categoriesTableAdapter1;
+        private WindowsFormsApp1.NWDataSet nwDataSet1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
+        private WindowsFormsApp1.NWDataSetTableAdapters.ProductsTableAdapter productsTableAdapter1;
+        private System.Windows.Forms.DataGridViewLinkColumn Column2;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Web.Security;
 using System.Windows.Forms;
 using WindowsFormsApp1.Properties;
@@ -757,7 +758,302 @@ namespace Starter
             ShowImage(imageID);
         }
 
-       
+        private void button28_Click(object sender, EventArgs e)
+        {
+
+            //Insert 
+            try
+            {
+              
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    SqlCommand command = new SqlCommand();
+                    command.Connection = conn;
+
+                    conn.Open();
+
+                     command.CommandText = "Insert into Region(RegionID, RegionDescription) values (100,'xxxxx')";
+                   command.ExecuteNonQuery();
+
+                    //exception
+                    command.CommandText = "Insert into Region(RegionID, RegionDescription) values (100,'kjkjk')";
+                    command.ExecuteNonQuery();
+
+                    command.CommandText = "Insert into Region(RegionID, RegionDescription) values (101,'yyyyy')";
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Insert Region successfully");
+
+
+                } // Auto conn.Close()
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            SqlTransaction txn = null;
+            SqlConnection conn = null;
+            try
+            {
+                conn = new SqlConnection(Settings.Default.NorthwindConnectionString);
+
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+
+                conn.Open();
+                txn = conn.BeginTransaction();
+
+                command.Transaction = txn;
+
+                command.CommandText = $"Insert into Region (RegionID, RegionDescription) values (100, 'xxx')";
+                command.ExecuteNonQuery();
+
+                //exception
+                command.CommandText = $"Insert into Region (RegionID, RegionDescription) values (100, 'yyy')";
+                command.ExecuteNonQuery();
+
+                command.CommandText = $"Insert into Region (RegionID, RegionDescription) values (101, 'yyy')";
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Insert Region successfully");
+
+                txn.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                txn.Rollback();
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+
+        }
+
+        #region Test DTC 分散式交易
+
+        void TestDTC()
+        {
+            //以前 分散式交易用 COM+
+            //現在用  TransactionScope
+            try
+            {
+
+                using (TransactionScope scope = new TransactionScope())
+                {
+
+                    //'測試不同DB　DTC 用
+                    //'觀察　Transaction.Current.TransactionInformation.DistributedIdentifier　變化
+
+                    using (global::System.Data.SqlClient.SqlConnection conn1 = new System.Data.SqlClient.SqlConnection(Settings.Default.NorthwindConnectionString))
+                    {
+                        conn1.Open();
+
+
+                        ShowCurrentTransaction();
+
+                        SqlCommand command1 = new SqlCommand();
+                        command1.Connection = conn1;
+                        //command1.CommandText = "...."
+                        //command1.ExecuteNonQuery();
+
+                        conn1.Close();
+
+                    }
+
+
+                    //'測試不同DB　DTC 用
+                    //'觀察　Transaction.Current.TransactionInformation.DistributedIdentifier　變化
+
+                    using (SqlConnection conn1 = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                    {
+                        using (SqlCommand myCommand = new SqlCommand())
+                        {
+                            myCommand.Connection = conn1;
+
+                            conn1.Open();
+
+                            ShowCurrentTransaction();
+
+                            //Restore database to near it's original condition so sample will work correctly.
+                            myCommand.CommandText = "DELETE FROM Region WHERE (RegionID = 100) OR (RegionID = 101)";
+                            myCommand.ExecuteNonQuery();
+
+                            //Insert the first record.
+                            myCommand.CommandText = "Insert into Region (RegionID, RegionDescription) VALUES (100, 'MidWestern')";
+                            myCommand.ExecuteNonQuery();
+
+
+                            myCommand.CommandText = "Insert into Region (RegionID, RegionDescription) VALUES (100, 'MidWestern')";
+                            myCommand.ExecuteNonQuery();
+
+                            //Insert the second record.
+                            myCommand.CommandText = "Insert into Region (RegionID, RegionDescription) VALUES (101, 'MidEastern')";
+                            myCommand.ExecuteNonQuery();
+
+                        }
+                    }
+
+                    MessageBox.Show("trans. Successfully");
+
+                    scope.Complete();
+
+                }   // call TransactionScope.Dispose()  //如果 TransactionScope 物件一開始就建立了交易，則由交易管理員認可交易的實際作業，
+
+            }
+
+            catch (TransactionException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("trans. roll back " + ex.Message);
+            }
+        }
+        private void ShowCurrentTransaction()
+        {
+
+            //Transaction.Current
+            string s = "transaction.Current.IsolationLevel: " + Transaction.Current.IsolationLevel.ToString() + Environment.NewLine +
+                    "TransactionInformation.CreationTime: " + Transaction.Current.TransactionInformation.CreationTime + Environment.NewLine +
+                    "TransactionInformation.Status: " + Transaction.Current.TransactionInformation.Status.ToString() + Environment.NewLine +
+                    "TransactionInformation.DistributedIdentifier: " + Transaction.Current.TransactionInformation.DistributedIdentifier.ToString() + Environment.NewLine +
+                    "TransactionInformation.LocalIdentifier: " + Transaction.Current.TransactionInformation.LocalIdentifier.ToString();
+            MessageBox.Show(s);
+
+
+        }
+
+
+
+        private void button82_Click(object sender, EventArgs e)
+        {
+            TestDTC();
+        }
+
+
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+
+                    using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                    {
+
+                        using (SqlCommand command = new SqlCommand())
+                        {
+                            command.Connection = conn;
+                            conn.Open();
+
+                            command.CommandText = "Delete from Region where RegionID=100 or RegionID = 101";
+                            command.ExecuteNonQuery();
+
+                            command.CommandText = "Insert into Region (RegionID, RegionDescription) Values (100, 'xxx')";
+                            command.ExecuteNonQuery();
+
+
+                            //Exception
+                            //===================
+                            command.CommandText = "Insert into Region (RegionID, RegionDescription) Values (100, 'xxx')";
+                            command.ExecuteNonQuery();
+                            //===================
+
+                            command.CommandText = "Insert into Region (RegionID, RegionDescription) Values (101, 'xxx')";
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                    scope.Complete();
+
+                } // 則由交易管理員認可交易的實際作業，
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button84_Click(object sender, EventArgs e)
+        {
+            CommittableTransaction tx = null;
+            try
+            {
+
+                using (tx = new CommittableTransaction())
+                {
+                    using (SqlConnection conn1 = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                    {
+
+                        using (SqlCommand myCommand = new SqlCommand())
+                        {
+
+                            myCommand.Connection = conn1;
+
+                            conn1.Open();
+                            conn1.EnlistTransaction(tx);
+
+
+                            //Restore database to near it's original condition so sample will work correctly.
+                            myCommand.CommandText = "DELETE FROM Region WHERE (RegionID = 100) OR (RegionID = 101)";
+                            myCommand.ExecuteNonQuery();
+
+                            //Insert the first record.
+                            myCommand.CommandText = "Insert into Region (RegionID, RegionDescription) VALUES (100, 'MidWestern')";
+                            myCommand.ExecuteNonQuery();
+
+
+                            //測試交易失敗用
+                            //Insert the first record.
+                            myCommand.CommandText = "Insert into Region (RegionID, RegionDescription) VALUES (100, 'MidWestern')";
+                            myCommand.ExecuteNonQuery();
+
+
+                            //Insert the second record.
+                            myCommand.CommandText = "Insert into Region (RegionID, RegionDescription) VALUES (101, 'MidEastern')";
+                            myCommand.ExecuteNonQuery();
+
+                            tx.Commit();
+
+                            MessageBox.Show("trans. Successfully");
+                        }
+                    }
+                }
+
+            }
+            catch (TransactionException ex)
+            {
+                MessageBox.Show(ex.Message);
+                tx.Rollback();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("trans. roll back " + ex.Message);
+            }
+        }
+
+
+
+        private void button82_Click_1(object sender, EventArgs e)
+        {
+            TestDTC();
+        }
+
+        #endregion
+
     }
 
 

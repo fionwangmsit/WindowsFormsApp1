@@ -30,30 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConnected));
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Node5");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Node6");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Node7");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Node8");
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Node2", new System.Windows.Forms.TreeNode[] {
-            treeNode39,
-            treeNode40,
-            treeNode41,
-            treeNode42});
-            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Node4");
-            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("USA (2)", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("UK (1)", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node5");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node6");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node7");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node8");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node2", new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node4");
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("USA (2)", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("UK (1)", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "aaa",
             "a1",
             "a2"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "bbb",
             "b1",
             "b2"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "ccc",
             "c1",
             "c2"}, -1);
@@ -261,7 +261,7 @@
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(709, 44);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(720, 508);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(720, 523);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // button25
@@ -749,23 +749,25 @@
             // 
             // button29
             // 
-            this.button29.Location = new System.Drawing.Point(71, 105);
+            this.button29.Location = new System.Drawing.Point(80, 103);
             this.button29.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(299, 42);
             this.button29.TabIndex = 1;
             this.button29.Text = "Do Transaction";
             this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
             // button28
             // 
-            this.button28.Location = new System.Drawing.Point(71, 22);
+            this.button28.Location = new System.Drawing.Point(80, 40);
             this.button28.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(299, 42);
             this.button28.TabIndex = 0;
             this.button28.Text = "No Transaction";
             this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
             // button83
             // 
@@ -786,6 +788,7 @@
             this.button84.TabIndex = 26;
             this.button84.Text = "使用 CommittableTransaction 實作明確交易";
             this.button84.UseVisualStyleBackColor = true;
+            this.button84.Click += new System.EventHandler(this.button84_Click);
             // 
             // button82
             // 
@@ -796,11 +799,12 @@
             this.button82.TabIndex = 25;
             this.button82.Text = "使用交易範圍實作隱含交易 (測試　DTC 用)\r\n分散式交易 (SQL Server/SQL Express)\r\n\r\n";
             this.button82.UseVisualStyleBackColor = true;
+            this.button82.Click += new System.EventHandler(this.button82_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(49, 33);
+            this.label8.Location = new System.Drawing.Point(50, 43);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 22);
@@ -816,6 +820,7 @@
             this.button33.TabIndex = 2;
             this.button33.Text = "TransactionScope";
             this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
             // 
             // groupBox12
             // 
@@ -1080,30 +1085,30 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(721, 22);
             this.treeView1.Name = "treeView1";
-            treeNode37.Name = "Node0";
-            treeNode37.Text = "Node0";
-            treeNode38.Name = "Node1";
-            treeNode38.Text = "Node1";
-            treeNode39.Name = "Node5";
-            treeNode39.Text = "Node5";
-            treeNode40.Name = "Node6";
-            treeNode40.Text = "Node6";
-            treeNode41.Name = "Node7";
-            treeNode41.Text = "Node7";
-            treeNode42.Name = "Node8";
-            treeNode42.Text = "Node8";
-            treeNode43.Name = "Node2";
-            treeNode43.Text = "Node2";
-            treeNode44.Name = "Node3";
-            treeNode44.Text = "Node3";
-            treeNode45.Name = "Node4";
-            treeNode45.Text = "Node4";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "Node0";
+            treeNode2.Name = "Node1";
+            treeNode2.Text = "Node1";
+            treeNode3.Name = "Node5";
+            treeNode3.Text = "Node5";
+            treeNode4.Name = "Node6";
+            treeNode4.Text = "Node6";
+            treeNode5.Name = "Node7";
+            treeNode5.Text = "Node7";
+            treeNode6.Name = "Node8";
+            treeNode6.Text = "Node8";
+            treeNode7.Name = "Node2";
+            treeNode7.Text = "Node2";
+            treeNode8.Name = "Node3";
+            treeNode8.Text = "Node3";
+            treeNode9.Name = "Node4";
+            treeNode9.Text = "Node4";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode37,
-            treeNode38,
-            treeNode43,
-            treeNode44,
-            treeNode45});
+            treeNode1,
+            treeNode2,
+            treeNode7,
+            treeNode8,
+            treeNode9});
             this.treeView1.Size = new System.Drawing.Size(207, 181);
             this.treeView1.TabIndex = 5;
             // 
@@ -1113,22 +1118,22 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            listViewGroup9.Header = "USA (2)";
-            listViewGroup9.Name = "listViewGroup1";
-            listViewGroup9.Tag = "usa";
-            listViewGroup10.Header = "UK (1)";
-            listViewGroup10.Name = "listViewGroup2";
+            listViewGroup1.Header = "USA (2)";
+            listViewGroup1.Name = "listViewGroup1";
+            listViewGroup1.Tag = "usa";
+            listViewGroup2.Header = "UK (1)";
+            listViewGroup2.Name = "listViewGroup2";
             this.listView3.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup9,
-            listViewGroup10});
+            listViewGroup1,
+            listViewGroup2});
             this.listView3.HideSelection = false;
-            listViewItem13.Group = listViewGroup9;
-            listViewItem14.Group = listViewGroup9;
-            listViewItem15.Group = listViewGroup10;
+            listViewItem1.Group = listViewGroup1;
+            listViewItem2.Group = listViewGroup1;
+            listViewItem3.Group = listViewGroup2;
             this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem13,
-            listViewItem14,
-            listViewItem15});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
             this.listView3.Location = new System.Drawing.Point(389, 22);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(303, 222);

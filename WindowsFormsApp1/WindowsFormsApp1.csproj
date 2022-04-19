@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -94,11 +95,35 @@
     <Compile Include="3. Connected 連線環境\FrmImageFlags.designer.cs">
       <DependentUpon>FrmImageFlags.cs</DependentUpon>
     </Compile>
+    <Compile Include="3. Connected 連線環境\FrmTransactionIsolation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3. Connected 連線環境\FrmTransactionIsolation.designer.cs">
+      <DependentUpon>FrmTransactionIsolation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4. Disconnected 離線 DataSet\FrmAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4. Disconnected 離線 DataSet\FrmAddProduct.Designer.cs">
+      <DependentUpon>FrmAddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="4. Disconnected 離線 DataSet\FrmDisConnected_離線DataSet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="4. Disconnected 離線 DataSet\FrmDisConnected_離線DataSet.designer.cs">
       <DependentUpon>FrmDisConnected_離線DataSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4. Disconnected 離線 DataSet\FrmProductDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4. Disconnected 離線 DataSet\FrmProductDetails.Designer.cs">
+      <DependentUpon>FrmProductDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4. Disconnected 離線 DataSet\FrmProductsCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4. Disconnected 離線 DataSet\FrmProductsCRUD.Designer.cs">
+      <DependentUpon>FrmProductsCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="NWDataSet.cs">
@@ -138,8 +163,20 @@
     <EmbeddedResource Include="3. Connected 連線環境\FrmImageFlags.resx">
       <DependentUpon>FrmImageFlags.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="3. Connected 連線環境\FrmTransactionIsolation.resx">
+      <DependentUpon>FrmTransactionIsolation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4. Disconnected 離線 DataSet\FrmAddProduct.resx">
+      <DependentUpon>FrmAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="4. Disconnected 離線 DataSet\FrmDisConnected_離線DataSet.resx">
       <DependentUpon>FrmDisConnected_離線DataSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4. Disconnected 離線 DataSet\FrmProductDetails.resx">
+      <DependentUpon>FrmProductDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4. Disconnected 離線 DataSet\FrmProductsCRUD.resx">
+      <DependentUpon>FrmProductsCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="熱身\FrmWarmUp.resx">
       <DependentUpon>FrmWarmUp.cs</DependentUpon>

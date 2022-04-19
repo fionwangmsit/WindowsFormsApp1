@@ -37,6 +37,8 @@ namespace WindowsFormsApp1._1._Overview
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTool));
             this.categoriesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nWDataSet = new WindowsFormsApp1.NWDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -49,16 +51,14 @@ namespace WindowsFormsApp1._1._Overview
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.categoriesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.categoriesDataGridView = new System.Windows.Forms.DataGridView();
-            this.categoryIDTextBox = new System.Windows.Forms.TextBox();
-            this.categoryNameTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.picturePictureBox = new System.Windows.Forms.PictureBox();
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nWDataSet = new WindowsFormsApp1.NWDataSet();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.categoryIDTextBox = new System.Windows.Forms.TextBox();
+            this.categoryNameTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.picturePictureBox = new System.Windows.Forms.PictureBox();
             this.categoriesTableAdapter = new WindowsFormsApp1.NWDataSetTableAdapters.CategoriesTableAdapter();
             this.tableAdapterManager = new WindowsFormsApp1.NWDataSetTableAdapters.TableAdapterManager();
             this.button1 = new System.Windows.Forms.Button();
@@ -71,10 +71,10 @@ namespace WindowsFormsApp1._1._Overview
             pictureLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingNavigator)).BeginInit();
             this.categoriesBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nWDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // categoryIDLabel
@@ -153,10 +153,20 @@ namespace WindowsFormsApp1._1._Overview
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorAddNewItem.Text = "加入新的";
             // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "Categories";
+            this.categoriesBindingSource.DataSource = this.nWDataSet;
+            // 
+            // nWDataSet
+            // 
+            this.nWDataSet.DataSetName = "NWDataSet";
+            this.nWDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(40, 33);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(40, 28);
             this.bindingNavigatorCountItem.Text = "/{0}";
             this.bindingNavigatorCountItem.ToolTipText = "項目總數";
             // 
@@ -166,7 +176,7 @@ namespace WindowsFormsApp1._1._Overview
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorDeleteItem.Text = "刪除";
             // 
             // bindingNavigatorMoveFirstItem
@@ -175,7 +185,7 @@ namespace WindowsFormsApp1._1._Overview
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveFirstItem.Text = "移到最前面";
             // 
             // bindingNavigatorMovePreviousItem
@@ -184,13 +194,13 @@ namespace WindowsFormsApp1._1._Overview
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMovePreviousItem.Text = "移到上一個";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -205,7 +215,7 @@ namespace WindowsFormsApp1._1._Overview
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -213,7 +223,7 @@ namespace WindowsFormsApp1._1._Overview
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveNextItem.Text = "移到下一個";
             // 
             // bindingNavigatorMoveLastItem
@@ -222,20 +232,20 @@ namespace WindowsFormsApp1._1._Overview
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveLastItem.Text = "移到最後面";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
             // categoriesBindingNavigatorSaveItem
             // 
             this.categoriesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.categoriesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("categoriesBindingNavigatorSaveItem.Image")));
             this.categoriesBindingNavigatorSaveItem.Name = "categoriesBindingNavigatorSaveItem";
-            this.categoriesBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 33);
+            this.categoriesBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 28);
             this.categoriesBindingNavigatorSaveItem.Text = "儲存資料";
             this.categoriesBindingNavigatorSaveItem.Click += new System.EventHandler(this.categoriesBindingNavigatorSaveItem_Click);
             // 
@@ -255,51 +265,6 @@ namespace WindowsFormsApp1._1._Overview
             this.categoriesDataGridView.RowTemplate.Height = 31;
             this.categoriesDataGridView.Size = new System.Drawing.Size(663, 412);
             this.categoriesDataGridView.TabIndex = 1;
-            // 
-            // categoryIDTextBox
-            // 
-            this.categoryIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriesBindingSource, "CategoryID", true));
-            this.categoryIDTextBox.Location = new System.Drawing.Point(906, 96);
-            this.categoryIDTextBox.Name = "categoryIDTextBox";
-            this.categoryIDTextBox.Size = new System.Drawing.Size(100, 29);
-            this.categoryIDTextBox.TabIndex = 3;
-            // 
-            // categoryNameTextBox
-            // 
-            this.categoryNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriesBindingSource, "CategoryName", true));
-            this.categoryNameTextBox.Location = new System.Drawing.Point(906, 131);
-            this.categoryNameTextBox.Name = "categoryNameTextBox";
-            this.categoryNameTextBox.Size = new System.Drawing.Size(100, 29);
-            this.categoryNameTextBox.TabIndex = 5;
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriesBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(906, 166);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(100, 29);
-            this.descriptionTextBox.TabIndex = 7;
-            // 
-            // picturePictureBox
-            // 
-            this.picturePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picturePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.categoriesBindingSource, "Picture", true));
-            this.picturePictureBox.Location = new System.Drawing.Point(906, 201);
-            this.picturePictureBox.Name = "picturePictureBox";
-            this.picturePictureBox.Size = new System.Drawing.Size(224, 201);
-            this.picturePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturePictureBox.TabIndex = 9;
-            this.picturePictureBox.TabStop = false;
-            // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataMember = "Categories";
-            this.categoriesBindingSource.DataSource = this.nWDataSet;
-            // 
-            // nWDataSet
-            // 
-            this.nWDataSet.DataSetName = "NWDataSet";
-            this.nWDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -334,6 +299,41 @@ namespace WindowsFormsApp1._1._Overview
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 150;
             // 
+            // categoryIDTextBox
+            // 
+            this.categoryIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriesBindingSource, "CategoryID", true));
+            this.categoryIDTextBox.Location = new System.Drawing.Point(906, 96);
+            this.categoryIDTextBox.Name = "categoryIDTextBox";
+            this.categoryIDTextBox.Size = new System.Drawing.Size(100, 29);
+            this.categoryIDTextBox.TabIndex = 3;
+            // 
+            // categoryNameTextBox
+            // 
+            this.categoryNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriesBindingSource, "CategoryName", true));
+            this.categoryNameTextBox.Location = new System.Drawing.Point(906, 131);
+            this.categoryNameTextBox.Name = "categoryNameTextBox";
+            this.categoryNameTextBox.Size = new System.Drawing.Size(100, 29);
+            this.categoryNameTextBox.TabIndex = 5;
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriesBindingSource, "Description", true));
+            this.descriptionTextBox.Location = new System.Drawing.Point(906, 166);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(100, 29);
+            this.descriptionTextBox.TabIndex = 7;
+            // 
+            // picturePictureBox
+            // 
+            this.picturePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.categoriesBindingSource, "Picture", true));
+            this.picturePictureBox.Location = new System.Drawing.Point(906, 217);
+            this.picturePictureBox.Name = "picturePictureBox";
+            this.picturePictureBox.Size = new System.Drawing.Size(224, 201);
+            this.picturePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturePictureBox.TabIndex = 9;
+            this.picturePictureBox.TabStop = false;
+            // 
             // categoriesTableAdapter
             // 
             this.categoriesTableAdapter.ClearBeforeFill = true;
@@ -343,6 +343,7 @@ namespace WindowsFormsApp1._1._Overview
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CategoriesTableAdapter = this.categoriesTableAdapter;
             this.tableAdapterManager.CustomersTableAdapter = null;
+            this.tableAdapterManager.MyMemberTableAdapter = null;
             this.tableAdapterManager.ProductsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WindowsFormsApp1.NWDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
@@ -393,10 +394,10 @@ namespace WindowsFormsApp1._1._Overview
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingNavigator)).EndInit();
             this.categoriesBindingNavigator.ResumeLayout(false);
             this.categoriesBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nWDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

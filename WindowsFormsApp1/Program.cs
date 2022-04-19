@@ -1,10 +1,12 @@
-﻿using Starter;
+﻿using Demo;
+using Starter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1._1._Overview;
+using WindowsFormsApp1._4._Disconnected_離線_DataSet;
 
 namespace WindowsFormsApp1
 {
@@ -25,9 +27,14 @@ namespace WindowsFormsApp1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-           // Application.Run(new FrmOverview()); //呼叫 class 建構子方法
-           // Application.Run(new  FrmSqlConnection());
-            Application.Run(new FrmConnected());
+            // Application.Run(new FrmOverview()); //呼叫 class 建構子方法
+            // Application.Run(new  FrmSqlConnection());
+            //Application.Run(new  FrmConnected());
+            // Application.Run(new FrmTransactionIsolation());
+
+            Application.Run(new FrmProductsCRUD());
+            Application.Run(new  FrmDisConnected_離線DataSet());
+
         }
     }
 }
